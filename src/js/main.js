@@ -15,11 +15,23 @@ Chart.defaults.plugins.tooltip.position = 'nearest'
 Chart.defaults.plugins.tooltip.external = coreui.ChartJS.customTooltips
 Chart.defaults.defaultFontColor = '#646470'
 
+document.documentElement.addEventListener('ColorSchemeChange', () => {
+  // eslint-disable-next-line no-console
+  console.log('aaaaa')
+  cardChart1.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--cui-primary')
+  cardChart2.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--cui-info')
+  mainChart.options.scales.x.ticks.color = coreui.Utils.getStyle('--cui-body-color')
+  mainChart.options.scales.y.ticks.color = coreui.Utils.getStyle('--cui-body-color')
+
+  cardChart1.update()
+  cardChart2.update()
+  mainChart.update()
+})
+
 const random = (min, max) =>
   // eslint-disable-next-line no-mixed-operators
   Math.floor(Math.random() * (max - min + 1) + min)
 
-// eslint-disable-next-line no-unused-vars
 const cardChart1 = new Chart(document.getElementById('card-chart1'), {
   type: 'line',
   data: {
@@ -77,7 +89,6 @@ const cardChart1 = new Chart(document.getElementById('card-chart1'), {
   }
 })
 
-// eslint-disable-next-line no-unused-vars
 const cardChart2 = new Chart(document.getElementById('card-chart2'), {
   type: 'line',
   data: {
@@ -225,7 +236,6 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
   }
 })
 
-// eslint-disable-next-line no-unused-vars
 const mainChart = new Chart(document.getElementById('main-chart'), {
   type: 'line',
   data: {

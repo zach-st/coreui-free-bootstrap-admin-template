@@ -1,1 +1,23 @@
-// Here you can add other styles
+// Custom modifications for this template
+
+.breadcrumb {
+  --cui-breadcrumb-margin-bottom: 0;
+  --cui-breadcrumb-padding-y: .75rem;
+  --cui-breadcrumb-padding-x: 1rem;
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .sidebar  {
+      // --cui-sidebar-bg: #212529;
+      --cui-sidebar-border-width: var(--cui-border-width);
+      --cui-sidebar-border-color: var(--cui-border-color);
+    }
+
+    .table-light {
+      --cui-table-color: var(--cui-bg-color);
+      --cui-table-bg: rgba(var(--cui-tertiary-bg-rgb), 1);
+      --cui-table-border-color: var(--cui-border-color);
+    }
+  }
+}

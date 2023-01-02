@@ -107,7 +107,7 @@ block view
       .d-flex.justify-content-between
         div
           h4.card-title.mb-0 Traffic
-          .small.text-medium-emphasis January - July 2022
+          .small.text-body.text-opacity-75 January - July 2022
         .btn-toolbar.d-none.d-md-block(role='toolbar' aria-label='Toolbar with buttons')
           .btn-group.btn-group-toggle.mx-3(data-coreui-toggle='buttons')
             input.btn-check#option1(type='radio', name='options', autocomplete='off')
@@ -127,29 +127,29 @@ block view
     .card-footer
       .row.row-cols-1.row-cols-md-5.text-center
         .col.mb-sm-2.mb-0
-          .text-medium-emphasis Visits
+          .text-body.text-opacity-75 Visits
           .fw-semibold 29.703 Users (40%)
-          .progress.progress-thin.mt-2
+          .progress.mt-2(style='--cui-progress-height: 4px;')
             .progress-bar.bg-success(role='progressbar', style='width: 40%', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100')
         .col.mb-sm-2.mb-0
-          .text-medium-emphasis Unique
+          .text-body.text-opacity-75 Unique
           .fw-semibold 24.093 Users (20%)
-          .progress.progress-thin.mt-2
+          .progress.mt-2(style='--cui-progress-height: 4px;')
             .progress-bar.bg-info(role='progressbar', style='width: 20%', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100')
         .col.mb-sm-2.mb-0
-          .text-medium-emphasis Pageviews
+          .text-body.text-opacity-75 Pageviews
           .fw-semibold 78.706 Views (60%)
-          .progress.progress-thin.mt-2
+          .progress.mt-2(style='--cui-progress-height: 4px;')
             .progress-bar.bg-warning(role='progressbar', style='width: 60%', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100')
         .col.mb-sm-2.mb-0
-          .text-medium-emphasis New Users
+          .text-body.text-opacity-75 New Users
           .fw-semibold 22.123 Users (80%)
-          .progress.progress-thin.mt-2
+          .progress.mt-2(style='--cui-progress-height: 4px;')
             .progress-bar.bg-danger(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
         .col.mb-sm-2.mb-0
-          .text-medium-emphasis Bounce Rate
+          .text-body.text-opacity-75 Bounce Rate
           .fw-semibold 40.15%
-          .progress.progress-thin.mt-2
+          .progress.mt-2(style='--cui-progress-height: 4px;')
             .progress-bar(role='progressbar', style='width: 40%', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100')
   // /.card.mb-4
   .row
@@ -163,11 +163,11 @@ block view
         .card-body.row.text-center
           .col
             .fs-5.fw-semibold 89k
-            .text-uppercase.text-medium-emphasis.small friends
-          .vr
+            .text-uppercase.text-body.text-opacity-75.small friends
+          .vr.p-0
           .col
             .fs-5.fw-semibold 459
-            .text-uppercase.text-medium-emphasis.small feeds
+            .text-uppercase.text-body.text-opacity-75.small feeds
     // /.col
     .col-sm-6.col-lg-4
       .card.mb-4(style='--cui-card-cap-bg: #00aced')
@@ -179,11 +179,11 @@ block view
         .card-body.row.text-center
           .col
             .fs-5.fw-semibold 973k
-            .text-uppercase.text-medium-emphasis.small followers
-          .vr
+            .text-uppercase.text-body.text-opacity-75.small followers
+          .vr.p-0
           .col
             .fs-5.fw-semibold 1.792
-            .text-uppercase.text-medium-emphasis.small tweets
+            .text-uppercase.text-body.text-opacity-75.small tweets
     // /.col
     .col-sm-6.col-lg-4
       .card.mb-4(style='--cui-card-cap-bg: #4875b4')
@@ -195,11 +195,11 @@ block view
         .card-body.row.text-center
           .col
             .fs-5.fw-semibold 500+
-            .text-uppercase.text-medium-emphasis.small contacts
-          .vr
+            .text-uppercase.text-body.text-opacity-75.small contacts
+          .vr.p-0
           .col
             .fs-5.fw-semibold 292
-            .text-uppercase.text-medium-emphasis.small feeds
+            .text-uppercase.text-body.text-opacity-75.small feeds
     // /.col
   // /.row
   .row
@@ -213,158 +213,151 @@ block view
               .row
                 .col-6
                   .border-start.border-start-4.border-start-info.px-3.mb-3
-                    small.text-medium-emphasis New Clients
+                    small.text-body.text-opacity-75 New Clients
                     div.fs-5.fw-semibold 9.123
                 // /.col
                 .col-6
                   .border-start.border-start-4.border-start-danger.px-3.mb-3
-                    small.text-medium-emphasis Recuring Clients
+                    small.text-body.text-opacity-75 Recuring Clients
                     div.fs-5.fw-semibold 22.643
                 // /.col
               // /.row
               hr.mt-0
-              .progress-group.mb-4
-                .progress-group-prepend
-                  span.text-medium-emphasis.small
-                    | Monday
-                .progress-group-bars
-                  .progress.progress-thin
+              .d-flex.align-items-center.mb-4
+                div.w-25.text-body.text-opacity-75.small.text-truncate
+                  | Monday
+                div.w-75
+                  .progress(style='--cui-progress-height: 4px; margin-bottom: 2px')
                     .progress-bar.bg-info(role='progressbar', style='width: 34%', aria-valuenow='34', aria-valuemin='0', aria-valuemax='100')
-                  .progress.progress-thin
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-danger(role='progressbar', style='width: 78%', aria-valuenow='78', aria-valuemin='0', aria-valuemax='100')
-              .progress-group.mb-4
-                .progress-group-prepend
-                  span.text-medium-emphasis.small
-                    | Tuesday
-                .progress-group-bars
-                  .progress.progress-thin
+              .d-flex.align-items-center.mb-4
+                div.w-25.text-body.text-opacity-75.small.text-truncate
+                  | Tuesday
+                div.w-75
+                  .progress(style='--cui-progress-height: 4px; margin-bottom: 2px')
                     .progress-bar.bg-info(role='progressbar', style='width: 56%', aria-valuenow='56', aria-valuemin='0', aria-valuemax='100')
-                  .progress.progress-thin
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-danger(role='progressbar', style='width: 94%', aria-valuenow='94', aria-valuemin='0', aria-valuemax='100')
-              .progress-group.mb-4
-                .progress-group-prepend
-                  span.text-medium-emphasis.small
-                    | Wednesday
-                .progress-group-bars
-                  .progress.progress-thin
+              .d-flex.align-items-center.mb-4
+                div.w-25.text-body.text-opacity-75.small.text-truncate
+                  | Wednesday
+                div.w-75
+                  .progress(style='--cui-progress-height: 4px; margin-bottom: 2px')
                     .progress-bar.bg-info(role='progressbar', style='width: 12%', aria-valuenow='12', aria-valuemin='0', aria-valuemax='100')
-                  .progress.progress-thin
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-danger(role='progressbar', style='width: 67%', aria-valuenow='67', aria-valuemin='0', aria-valuemax='100')
-              .progress-group.mb-4
-                .progress-group-prepend
-                  span.text-medium-emphasis.small
-                    | Thursday
-                .progress-group-bars
-                  .progress.progress-thin
+              .d-flex.align-items-center.mb-4
+                div.w-25.text-body.text-opacity-75.small.text-truncate
+                  | Thursday
+                div.w-75
+                  .progress(style='--cui-progress-height: 4px; margin-bottom: 2px')
                     .progress-bar.bg-info(role='progressbar', style='width: 43%', aria-valuenow='43', aria-valuemin='0', aria-valuemax='100')
-                  .progress.progress-thin
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-danger(role='progressbar', style='width: 91%', aria-valuenow='91', aria-valuemin='0', aria-valuemax='100')
-              .progress-group.mb-4
-                .progress-group-prepend
-                  span.text-medium-emphasis.small
-                    | Friday
-                .progress-group-bars
-                  .progress.progress-thin
+              .d-flex.align-items-center.mb-4
+                div.w-25.text-body.text-opacity-75.small.text-truncate
+                  | Friday
+                div.w-75
+                  .progress(style='--cui-progress-height: 4px; margin-bottom: 2px')
                     .progress-bar.bg-info(role='progressbar', style='width: 22%', aria-valuenow='22', aria-valuemin='0', aria-valuemax='100')
-                  .progress.progress-thin
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-danger(role='progressbar', style='width: 73%', aria-valuenow='73', aria-valuemin='0', aria-valuemax='100')
-              .progress-group.mb-4
-                .progress-group-prepend
-                  span.text-medium-emphasis.small
-                    | Saturday
-                .progress-group-bars
-                  .progress.progress-thin
+              .d-flex.align-items-center.mb-4
+                div.w-25.text-body.text-opacity-75.small.text-truncate
+                  | Saturday
+                div.w-75
+                  .progress(style='--cui-progress-height: 4px; margin-bottom: 2px')
                     .progress-bar.bg-info(role='progressbar', style='width: 53%', aria-valuenow='53', aria-valuemin='0', aria-valuemax='100')
-                  .progress.progress-thin
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-danger(role='progressbar', style='width: 82%', aria-valuenow='82', aria-valuemin='0', aria-valuemax='100')
-              .progress-group.mb-4
-                .progress-group-prepend
-                  span.text-medium-emphasis.small
-                    | Sunday
-                .progress-group-bars
-                  .progress.progress-thin
+              .d-flex.align-items-center.mb-4
+                div.w-25.text-body.text-opacity-75.small.text-truncate
+                  | Sunday
+                div.w-75
+                  .progress(style='--cui-progress-height: 4px; margin-bottom: 2px')
                     .progress-bar.bg-info(role='progressbar', style='width: 9%', aria-valuenow='9', aria-valuemin='0', aria-valuemax='100')
-                  .progress.progress-thin
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-danger(role='progressbar', style='width: 69%', aria-valuenow='69', aria-valuemin='0', aria-valuemax='100')
             // /.col
             .col-sm-6
               .row
                 .col-6
                   .border-start.border-start-4.border-start-warning.px-3.mb-3
-                    small.text-medium-emphasis Pageviews
+                    small.text-body.text-opacity-75 Pageviews
                     div.fs-5.fw-semibold 78.623
                 // /.col
                 .col-6
                   .border-start.border-start-4.border-start-success.px-3.mb-3
-                    small.text-medium-emphasis Organic
+                    small.text-body.text-opacity-75 Organic
                     div.fs-5.fw-semibold 49.123
                 // /.col
               // /.row
               hr.mt-0
-              .progress-group
-                .progress-group-header
+              div.mb-3
+                .d-flex.mb-1
                   svg.icon.icon-lg.me-2
                     use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user")
                   div Male
                   .ms-auto.fw-semibold 43%
-                .progress-group-bars
-                  .progress.progress-thin
+                div
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-warning(role='progressbar', style='width: 43%', aria-valuenow='43', aria-valuemin='0', aria-valuemax='100')
-              .progress-group.mb-5
-                .progress-group-header
+              div(style='margin-bottom: 1.9rem')
+                .d-flex.mb-1
                   svg.icon.icon-lg.me-2
                     use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user-female")
                   div Female
                   .ms-auto.fw-semibold 37%
-                .progress-group-bars
-                  .progress.progress-thin
+                div
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-warning(role='progressbar', style='width: 43%', aria-valuenow='43', aria-valuemin='0', aria-valuemax='100')
-              .progress-group
-                .progress-group-header
+              div.mb-3
+                .d-flex.mb-1
                   svg.icon.icon-lg.me-2
                     use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-google")
                   div Organic Search
                   .ms-auto.fw-semibold.me-2 191.235
-                  .text-medium-emphasis.small (56%)
-                .progress-group-bars
-                  .progress.progress-thin
+                  .text-body.text-opacity-75.small (56%)
+                div
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-success(role='progressbar', style='width: 56%', aria-valuenow='56', aria-valuemin='0', aria-valuemax='100')
-              .progress-group
-                .progress-group-header
+              div.mb-3
+                .d-flex.mb-1
                   svg.icon.icon-lg.me-2
                     use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-facebook-f")
                   div Facebook
                   .ms-auto.fw-semibold.me-2 51.223
-                  .text-medium-emphasis.small (15%)
-                .progress-group-bars
-                  .progress.progress-thin
+                  .text-body.text-opacity-75.small (15%)
+                div
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-success(role='progressbar', style='width: 15%', aria-valuenow='15', aria-valuemin='0', aria-valuemax='100')
-              .progress-group
-                .progress-group-header
+              div.mb-3
+                .d-flex.mb-1
                   svg.icon.icon-lg.me-2
                     use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-twitter")
                   div Twitter
                   .ms-auto.fw-semibold.me-2 37.564
-                  .text-medium-emphasis.small (11%)
-                .progress-group-bars
-                  .progress.progress-thin
+                  .text-body.text-opacity-75.small (11%)
+                div
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-success(role='progressbar', style='width: 11%', aria-valuenow='11', aria-valuemin='0', aria-valuemax='100')
-              .progress-group
-                .progress-group-header
+              div.mb-3
+                .d-flex.mb-1
                   svg.icon.icon-lg.me-2
                     use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-linkedin")
                   div LinkedIn
                   .ms-auto.fw-semibold.me-2 27.319
-                  .text-medium-emphasis.small (8%)
-                .progress-group-bars
-                  .progress.progress-thin
+                  .text-body.text-opacity-75.small (8%)
+                div
+                  .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-success(role='progressbar', style='width: 8%', aria-valuenow='8', aria-valuemin='0', aria-valuemax='100')
             // /.col
           // /.row
           br
           .table-responsive
             table.table.border.mb-0
-              thead.table-light.fw-semibold
+              thead.table-light.fw-semibold(class="dark:bg-body-tertiary")
                 tr.align-middle
                   th.text-center
                     svg.icon
@@ -383,25 +376,23 @@ block view
                       span.avatar-status.bg-success
                   td
                     div Yiorgos Avraamu
-                    .small.text-medium-emphasis
+                    .small.text-body.text-opacity-75
                       span New
                       |  | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-us")
                   td
-                    .clearfix
-                      .float-start
-                        .fw-semibold 50%
-                      .float-end
-                        small.text-medium-emphasis Jun 11, 2020 - Jul 10, 2020
-                    .progress.progress-thin
+                    .d-flex.justify-content-between.mb-1
+                      .fw-semibold 50%
+                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                    .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-success(role='progressbar', style='width: 50%', aria-valuenow='50', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-mastercard")
                   td
-                    .small.text-medium-emphasis Last login
+                    .small.text-body.text-opacity-75 Last login
                     .fw-semibold 10 sec ago
                   td
                     .dropdown
@@ -419,25 +410,23 @@ block view
                       span.avatar-status.bg-danger
                   td
                     div Avram Tarasios
-                    .small.text-medium-emphasis
+                    .small.text-body.text-opacity-75
                       span Recurring
                       |  | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-br")
                   td
-                    .clearfix
-                      .float-start
-                        .fw-semibold 10%
-                      .float-end
-                        small.text-medium-emphasis Jun 11, 2020 - Jul 10, 2020
-                    .progress.progress-thin
+                    .d-flex.justify-content-between.mb-1
+                      .fw-semibold 10%
+                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                    .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-info(role='progressbar', style='width: 10%', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-visa")
                   td
-                    .small.text-medium-emphasis Last login
+                    .small.text-body.text-opacity-75 Last login
                     .fw-semibold 5 minutes ago
                   td
                     .dropdown
@@ -455,25 +444,23 @@ block view
                       span.avatar-status.bg-warning
                   td
                     div Quintin Ed
-                    .small.text-medium-emphasis
+                    .small.text-body.text-opacity-75
                       span New
                       |  | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-in")
                   td
-                    .clearfix
-                      .float-start
-                        .fw-semibold 74%
-                      .float-end
-                        small.text-medium-emphasis Jun 11, 2020 - Jul 10, 2020
-                    .progress.progress-thin
+                    .d-flex.justify-content-between.mb-1
+                      .fw-semibold 74%
+                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                    .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-warning(role='progressbar', style='width: 74%', aria-valuenow='74', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-stripe")
                   td
-                    .small.text-medium-emphasis Last login
+                    .small.text-body.text-opacity-75 Last login
                     .fw-semibold 1 hour ago
                   td
                     .dropdown
@@ -491,25 +478,23 @@ block view
                       span.avatar-status.bg-secondary
                   td
                     div Enéas Kwadwo
-                    .small.text-medium-emphasis
+                    .small.text-body.text-opacity-75
                       span New
                       |  | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-fr")
                   td
-                    .clearfix
-                      .float-start
-                        .fw-semibold 98%
-                      .float-end
-                        small.text-medium-emphasis Jun 11, 2020 - Jul 10, 2020
-                    .progress.progress-thin
+                    .d-flex.justify-content-between.mb-1
+                      .fw-semibold 98%
+                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                    .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-danger(role='progressbar', style='width: 98%', aria-valuenow='98', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-paypal")
                   td
-                    .small.text-medium-emphasis Last login
+                    .small.text-body.text-opacity-75 Last login
                     .fw-semibold Last month
                   td
                     .dropdown
@@ -527,25 +512,23 @@ block view
                       span.avatar-status.bg-success
                   td
                     div Agapetus Tadeáš
-                    .small.text-medium-emphasis
+                    .small.text-body.text-opacity-75
                       span New
                       |  | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-es")
                   td
-                    .clearfix
-                      .float-start
-                        .fw-semibold 22%
-                      .float-end
-                        small.text-medium-emphasis Jun 11, 2020 - Jul 10, 2020
-                    .progress.progress-thin
+                    .d-flex.justify-content-between.mb-1
+                      .fw-semibold 22%
+                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                    .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-info(role='progressbar', style='width: 22%', aria-valuenow='22', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-apple-pay")
                   td
-                    .small.text-medium-emphasis Last login
+                    .small.text-body.text-opacity-75 Last login
                     .fw-semibold Last week
                   td
                     .dropdown.dropup
@@ -563,25 +546,23 @@ block view
                       span.avatar-status.bg-danger
                   td
                     div Friderik Dávid
-                    .small.text-medium-emphasis
+                    .small.text-body.text-opacity-75
                       span New
                       |  | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-pl")
                   td
-                    .clearfix
-                      .float-start
-                        .fw-semibold 43%
-                      .float-end
-                        small.text-medium-emphasis Jun 11, 2020 - Jul 10, 2020
-                    .progress.progress-thin
+                    .d-flex.justify-content-between.mb-1
+                      .fw-semibold 43%
+                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                    .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-success(role='progressbar', style='width: 43%', aria-valuenow='43', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-amex")
                   td
-                    .small.text-medium-emphasis Last login
+                    .small.text-body.text-opacity-75 Last login
                     .fw-semibold Yesterday
                   td
                     .dropdown.dropup
