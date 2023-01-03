@@ -8,7 +8,7 @@ block scripts
     // Plugins and scripts required by this view
     script(src='node_modules/chart.js/dist/chart.min.js')
     script(src='node_modules/@coreui/chartjs/dist/js/coreui-chartjs.js')
-    script(src='node_modules/@coreui/utils/dist/coreui-utils.js')
+    script(src='node_modules/@coreui/utils/dist/umd/index.js')
     script(src='js/main.js')
 
 block breadcrumb
@@ -16,7 +16,7 @@ block breadcrumb
 
 block view
   .row
-    .col-sm-6.col-lg-3
+    .col-sm-6.col-xl-3
       .card.mb-4.text-white.bg-primary
         .card-body.pb-0.d-flex.justify-content-between.align-items-start
           div
@@ -38,7 +38,7 @@ block view
         .c-chart-wrapper.mt-3.mx-3(style='height:70px;')
           canvas#card-chart1.chart(height='70')
     // /.col
-    .col-sm-6.col-lg-3
+    .col-sm-6.col-xl-3
       .card.mb-4.text-white.bg-info
         .card-body.pb-0.d-flex.justify-content-between.align-items-start
           div
@@ -59,7 +59,7 @@ block view
         .c-chart-wrapper.mt-3.mx-3(style='height:70px;')
           canvas#card-chart2.chart(height='70')
     // /.col
-    .col-sm-6.col-lg-3
+    .col-sm-6.col-xl-3
       .card.mb-4.text-white.bg-warning
         .card-body.pb-0.d-flex.justify-content-between.align-items-start
           div
@@ -80,7 +80,7 @@ block view
         .c-chart-wrapper.mt-3(style='height:70px;')
           canvas#card-chart3.chart(height='70')
     // /.col
-    .col-sm-6.col-lg-3
+    .col-sm-6.col-xl-3
       .card.mb-4.text-white.bg-danger
         .card-body.pb-0.d-flex.justify-content-between.align-items-start
           div
@@ -209,7 +209,8 @@ block view
           | Traffic &amp; Sales
         .card-body
           .row
-            .col-sm-6
+            .col-md-6
+              hr.d-lg-none
               .row
                 .col-6
                   .border-start.border-start-4.border-start-info.px-3.mb-3
@@ -280,7 +281,8 @@ block view
                   .progress(style='--cui-progress-height: 4px;')
                     .progress-bar.bg-danger(role='progressbar', style='width: 69%', aria-valuenow='69', aria-valuemin='0', aria-valuemax='100')
             // /.col
-            .col-sm-6
+            .col-md-6
+              hr.d-lg-none
               .row
                 .col-6
                   .border-start.border-start-4.border-start-warning.px-3.mb-3
@@ -376,16 +378,14 @@ block view
                       span.avatar-status.bg-success
                   td
                     div Yiorgos Avraamu
-                    .small.text-body.text-opacity-75
-                      span New
-                      |  | Registered: Jan 1, 2020
+                    .small.text-body.text-opacity-75.text-nowrap New | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-us")
                   td
-                    .d-flex.justify-content-between.mb-1
+                    .d-flex.align-items-end.justify-content-between.mb-1
                       .fw-semibold 50%
-                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                      .text-body.text-opacity-75.small.text-nowrap.ms-2 Jun 11, 2020 - Jul 10, 2020
                     .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-success(role='progressbar', style='width: 50%', aria-valuenow='50', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
@@ -393,7 +393,7 @@ block view
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-mastercard")
                   td
                     .small.text-body.text-opacity-75 Last login
-                    .fw-semibold 10 sec ago
+                    .fw-semibold.text-nowrap 10 sec ago
                   td
                     .dropdown
                       button.btn.btn-transparent.p-0(type='button', data-coreui-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -410,16 +410,14 @@ block view
                       span.avatar-status.bg-danger
                   td
                     div Avram Tarasios
-                    .small.text-body.text-opacity-75
-                      span Recurring
-                      |  | Registered: Jan 1, 2020
+                    .small.text-body.text-opacity-75.text-nowrap Recurring | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-br")
                   td
-                    .d-flex.justify-content-between.mb-1
+                    .d-flex.align-items-end.justify-content-between.mb-1
                       .fw-semibold 10%
-                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                      .text-body.text-opacity-75.small.text-nowrap.ms-2 Jun 11, 2020 - Jul 10, 2020
                     .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-info(role='progressbar', style='width: 10%', aria-valuenow='10', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
@@ -427,7 +425,7 @@ block view
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-visa")
                   td
                     .small.text-body.text-opacity-75 Last login
-                    .fw-semibold 5 minutes ago
+                    .fw-semibold.text-nowrap 5 minutes ago
                   td
                     .dropdown
                       button.btn.btn-transparent.p-0(type='button', data-coreui-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -444,16 +442,14 @@ block view
                       span.avatar-status.bg-warning
                   td
                     div Quintin Ed
-                    .small.text-body.text-opacity-75
-                      span New
-                      |  | Registered: Jan 1, 2020
+                    .small.text-body.text-opacity-75.text-nowrap New | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-in")
                   td
-                    .d-flex.justify-content-between.mb-1
+                    .d-flex.align-items-end.justify-content-between.mb-1
                       .fw-semibold 74%
-                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                      .text-body.text-opacity-75.small.text-nowrap.ms-2 Jun 11, 2020 - Jul 10, 2020
                     .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-warning(role='progressbar', style='width: 74%', aria-valuenow='74', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
@@ -461,7 +457,7 @@ block view
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-stripe")
                   td
                     .small.text-body.text-opacity-75 Last login
-                    .fw-semibold 1 hour ago
+                    .fw-semibold.text-nowrap 1 hour ago
                   td
                     .dropdown
                       button.btn.btn-transparent.p-0(type='button', data-coreui-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -478,16 +474,14 @@ block view
                       span.avatar-status.bg-secondary
                   td
                     div Enéas Kwadwo
-                    .small.text-body.text-opacity-75
-                      span New
-                      |  | Registered: Jan 1, 2020
+                    .small.text-body.text-opacity-75.text-nowrap New | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-fr")
                   td
-                    .d-flex.justify-content-between.mb-1
+                    .d-flex.align-items-end.justify-content-between.mb-1
                       .fw-semibold 98%
-                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                      .text-body.text-opacity-75.small.text-nowrap.ms-2 Jun 11, 2020 - Jul 10, 2020
                     .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-danger(role='progressbar', style='width: 98%', aria-valuenow='98', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
@@ -495,7 +489,7 @@ block view
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-paypal")
                   td
                     .small.text-body.text-opacity-75 Last login
-                    .fw-semibold Last month
+                    .fw-semibold.text-nowrap Last month
                   td
                     .dropdown
                       button.btn.btn-transparent.p-0(type='button', data-coreui-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -512,16 +506,14 @@ block view
                       span.avatar-status.bg-success
                   td
                     div Agapetus Tadeáš
-                    .small.text-body.text-opacity-75
-                      span New
-                      |  | Registered: Jan 1, 2020
+                    .small.text-body.text-opacity-75.text-nowrap New | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-es")
                   td
-                    .d-flex.justify-content-between.mb-1
+                    .d-flex.align-items-end.justify-content-between.mb-1
                       .fw-semibold 22%
-                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                      .text-body.text-opacity-75.small.text-nowrap.ms-2 Jun 11, 2020 - Jul 10, 2020
                     .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-info(role='progressbar', style='width: 22%', aria-valuenow='22', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
@@ -529,7 +521,7 @@ block view
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-apple-pay")
                   td
                     .small.text-body.text-opacity-75 Last login
-                    .fw-semibold Last week
+                    .fw-semibold.text-nowrap Last week
                   td
                     .dropdown.dropup
                       button.btn.btn-transparent.p-0(type='button', data-coreui-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -546,16 +538,14 @@ block view
                       span.avatar-status.bg-danger
                   td
                     div Friderik Dávid
-                    .small.text-body.text-opacity-75
-                      span New
-                      |  | Registered: Jan 1, 2020
+                    .small.text-body.text-opacity-75.text-nowrap New | Registered: Jan 1, 2020
                   td.text-center
                     svg.icon.icon-xl
                       use(xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-pl")
                   td
-                    .d-flex.justify-content-between.mb-1
+                    .d-flex.align-items-end.justify-content-between.mb-1
                       .fw-semibold 43%
-                      .text-body.text-opacity-75.small Jun 11, 2020 - Jul 10, 2020
+                      .text-body.text-opacity-75.small.text-nowrap.ms-2 Jun 11, 2020 - Jul 10, 2020
                     .progress(style='--cui-progress-height: 4px;')
                       .progress-bar.bg-success(role='progressbar', style='width: 43%', aria-valuenow='43', aria-valuemin='0', aria-valuemax='100')
                   td.text-center
@@ -563,7 +553,7 @@ block view
                       use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-amex")
                   td
                     .small.text-body.text-opacity-75 Last login
-                    .fw-semibold Yesterday
+                    .fw-semibold.text-nowrap Yesterday
                   td
                     .dropdown.dropup
                       button.btn.btn-transparent.p-0(type='button', data-coreui-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
