@@ -16,8 +16,6 @@ Chart.defaults.plugins.tooltip.external = coreui.ChartJS.customTooltips
 Chart.defaults.defaultFontColor = '#646470'
 
 document.documentElement.addEventListener('ColorSchemeChange', () => {
-  // eslint-disable-next-line no-console
-  console.log('aaaaa')
   cardChart1.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--cui-primary')
   cardChart2.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--cui-info')
   mainChart.options.scales.x.ticks.color = coreui.Utils.getStyle('--cui-body-color')
