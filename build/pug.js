@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
-// eslint-disable-next-line unicorn/prefer-node-protocol
-const fs = require('fs').promises
-// eslint-disable-next-line unicorn/prefer-node-protocol
-const path = require('path')
+const fs = require('node:fs').promises
+const path = require('node:path')
 const mkdirp = require('mkdirp')
 const pug = require('pug')
 const { basename, dirname, resolve, sep } = path
@@ -84,5 +82,4 @@ async function main(args) {
   }
 }
 
-// eslint-disable-next-line unicorn/prefer-top-level-await
 main(args)

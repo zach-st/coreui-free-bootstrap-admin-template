@@ -9,10 +9,8 @@
 
 'use strict'
 
-// eslint-disable-next-line unicorn/prefer-node-protocol
-const fs = require('fs').promises
-// eslint-disable-next-line unicorn/prefer-node-protocol
-const path = require('path')
+const fs = require('node:fs').promises
+const path = require('node:path')
 const globby = require('globby')
 
 const VERBOSE = process.argv.includes('--verbose')
@@ -20,7 +18,7 @@ const DRY_RUN = process.argv.includes('--dry') || process.argv.includes('--dry-r
 
 // These are the filetypes we only care about replacing the version
 const GLOB = [
-  '**/*.{css,html,js,json,md,pug,scss,txt,yml}'
+  '**/*.{css,html,js,json,md,scss,txt,yml}'
 ]
 const GLOBBY_OPTIONS = {
   cwd: path.join(__dirname, '..'),
@@ -62,7 +60,7 @@ async function replaceRecursively(file, oldVersion, newVersion) {
 }
 
 async function main(args) {
-  const [oldVersion, newVersion] = args
+  let [oldVersion, newVersion] = args
 
   if (!oldVersion || !newVersion) {
     console.error('USAGE: change-version old_version new_version [--verbose] [--dry[-run]]')
@@ -71,7 +69,7 @@ async function main(args) {
   }
 
   // Strip any leading `v` from arguments because otherwise we will end up with duplicate `v`s
-  [oldVersion, newVersion].map(arg => arg.startsWith('v') ? arg.slice(1) : arg)
+  [oldVersion, newVersion] = [oldVersion, newVersion].map(arg => arg.startsWith('v') ? arg.slice(1) : arg)
 
   try {
     const files = await globby(GLOB, GLOBBY_OPTIONS, EXCLUDED_FILES)
@@ -83,5 +81,4 @@ async function main(args) {
   }
 }
 
-// eslint-disable-next-line unicorn/prefer-top-level-await
 main(process.argv.slice(2))
