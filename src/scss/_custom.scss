@@ -9,7 +9,6 @@
 @if $enable-dark-mode {
   @include color-mode(dark) {
     .sidebar  {
-      // --cui-sidebar-bg: #212529;
       --cui-sidebar-border-width: var(--cui-border-width);
       --cui-sidebar-border-color: var(--cui-border-color);
     }
