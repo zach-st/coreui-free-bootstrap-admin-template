@@ -53,9 +53,11 @@ const cardChart1 = new Chart(document.getElementById('card-chart1'), {
     maintainAspectRatio: false,
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
-          display: false,
-          drawBorder: false
+          display: false
         },
         ticks: {
           display: false
@@ -110,9 +112,11 @@ const cardChart2 = new Chart(document.getElementById('card-chart2'), {
     maintainAspectRatio: false,
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
-          display: false,
-          drawBorder: false
+          display: false
         },
         ticks: {
           display: false
@@ -221,6 +225,9 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
         }
       },
       y: {
+        border: {
+          display: false
+        },
         grid: {
           display: false,
           drawBorder: false,
