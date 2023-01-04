@@ -1,3 +1,10 @@
+/**
+ * --------------------------------------------------------------------------
+ * CoreUI Boostrap Admin Template (v5.0.0-alpha.0): set-config.js
+ * Licensed under MIT (https://github.com/coreui/coreui-free-bootstrap-admin-template/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
 (() => {
   'use strict'
 

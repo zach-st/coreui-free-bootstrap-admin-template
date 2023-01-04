@@ -1,4 +1,14 @@
 /* eslint-disable unicorn/no-array-for-each */
+/**
+ * --------------------------------------------------------------------------
+ * CoreUI Boostrap Admin Template (v5.0.0-alpha.0): color-modes.js
+ * Licensed under MIT (https://github.com/coreui/coreui-free-bootstrap-admin-template/blob/main/LICENSE)
+ *
+ * This is a modified version of the Bootstrap's color-modes.js
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ * --------------------------------------------------------------------------
+ */
+
 (() => {
   'use strict'
 

@@ -1,4 +1,11 @@
 /* eslint-disable unicorn/no-array-for-each */
+/**
+ * --------------------------------------------------------------------------
+ * CoreUI Boostrap Admin Template (v5.0.0-alpha.0): direction.js
+ * Licensed under MIT (https://github.com/coreui/coreui-free-bootstrap-admin-template/blob/main/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
 (() => {
   'use strict'
 
