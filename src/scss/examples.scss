@@ -9,11 +9,9 @@
   }
 
   .tab-content {
-    background-color: var(--cui-tertiary-bg) !important;
-
-    @at-root .dark-theme & {
-      background-color: rgba(255, 255, 255, .1) !important;
-    }
+    margin-top: -.125rem !important;
+    background-color: rgba(var(--cui-tertiary-bg-rgb), .5) !important;
+    border-top: .125rem solid var(--cui-border-color) !important;
   }
 
   & + p {
