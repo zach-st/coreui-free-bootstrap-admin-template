@@ -1,6 +1,6 @@
 {
   "name": "@coreui/coreui-free-bootstrap-admin-template",
-  "version": "4.2.2",
+  "version": "5.0.0-alpha.0",
   "description": "Free Bootstrap Admin Template",
   "keywords": [
     "admin",
@@ -90,11 +90,12 @@
     "zip": "git archive -o coreui-free-bootstrap-admin-template-v$npm_package_version.zip -9 HEAD"
   },
   "dependencies": {
-    "@coreui/chartjs": "^3.0.0",
-    "@coreui/coreui": "^4.2.6",
+    "@coreui/chartjs": "^4.0.0-0",
+    "@coreui/coreui": "^5.0.0-0",
     "@coreui/icons": "^3.0.0-0",
     "@coreui/utils": "^2.0.0-0",
     "chart.js": "^4.1.1",
+    "chartjs-plugin-annotation": "^2.1.1",
     "simplebar": "^5.3.9"
   },
   "devDependencies": {

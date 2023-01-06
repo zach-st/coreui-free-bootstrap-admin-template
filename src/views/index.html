@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <!--
 * CoreUI - Free Bootstrap Admin Template
-* @version v4.2.2
-* @link https://coreui.io
-* Copyright (c) 2022 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
+* @version v5.0.0-alpha.0
+* @link https://coreui.io/product/free-bootstrap-admin-template/
+* Copyright (c) 2023 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://github.com/coreui/coreui-free-bootstrap-admin-template/blob/main/LICENSE)
 -->
 
-<!-- Breadcrumb-->
 <html lang="en">
   <head>
     <base href="./">
@@ -39,10 +38,13 @@
     <link rel="stylesheet" href="node_modules/simplebar/dist/simplebar.css">
     <link rel="stylesheet" href="css/vendors/simplebar.css">
     <!-- Main styles for this application-->
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="preload" href="css/style.rtl.css" as="style">
+    <link id="main-style" href="css/style.css" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
     <link href="css/examples.css" rel="stylesheet">
+    <script src="js/set-config.js"></script>
+    <script src="js/color-modes.js"></script>
+    <script src="js/direction.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
@@ -58,11 +60,11 @@
   </head>
   <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-      <div class="sidebar-brand d-none d-md-flex">
+      <div class="sidebar-brand d-none d-md-flex align-items-center">
         <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
           <use xlink:href="assets/brand/coreui.svg#full"></use>
         </svg>
-        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+        <svg class="sidebar-brand-narrow mx-auto" width="46" height="46" alt="CoreUI Logo">
           <use xlink:href="assets/brand/coreui.svg#signet"></use>
         </svg>
       </div>
@@ -70,7 +72,7 @@
         <li class="nav-item"><a class="nav-link" href="index.html">
             <svg class="nav-icon">
               <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-speedometer"></use>
-            </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
+            </svg> Dashboard<span class="badge bg-info ms-auto">NEW</span></a></li>
         <li class="nav-title">Theme</li>
         <li class="nav-item"><a class="nav-link" href="colors.html">
             <svg class="nav-icon">
@@ -137,7 +139,7 @@
               <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-star"></use>
             </svg> Icons</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-free.html"> CoreUI Icons<span class="badge badge-sm bg-success ms-auto">Free</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-free.html"> CoreUI Icons<span class="badge bg-success ms-auto">Free</span></a></li>
             <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-brand.html"> CoreUI Icons - Brand</a></li>
             <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-flag.html"> CoreUI Icons - Flag</a></li>
           </ul>
@@ -156,7 +158,7 @@
         <li class="nav-item"><a class="nav-link" href="widgets.html">
             <svg class="nav-icon">
               <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-calculator"></use>
-            </svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
+            </svg> Widgets<span class="badge bg-info ms-auto">NEW</span></a></li>
         <li class="nav-divider"></li>
         <li class="nav-title">Extras</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -186,93 +188,152 @@
             <svg class="nav-icon">
               <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-description"></use>
             </svg> Docs</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top">
+        <li class="nav-item"><a class="nav-link nav-link-danger" href="https://coreui.io/product/bootstrap-dashboard-template/" target="_blank">
             <svg class="nav-icon">
               <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-layers"></use>
-            </svg> Try CoreUI
-            <div class="fw-semibold">PRO</div></a></li>
+            </svg> Get CoreUI PRO</a></li>
       </ul>
       <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
-    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
-      <header class="header header-sticky mb-4">
-        <div class="container-fluid">
-          <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-            <svg class="icon icon-lg">
-              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-menu"></use>
-            </svg>
-          </button><a class="header-brand d-md-none" href="#">
-            <svg width="118" height="46" alt="CoreUI Logo">
-              <use xlink:href="assets/brand/coreui.svg#full"></use>
-            </svg></a>
-          <ul class="header-nav d-none d-md-flex">
-            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-          </ul>
-          <ul class="header-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
-                </svg></a></li>
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich"></use>
-                </svg></a></li>
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open"></use>
-                </svg></a></li>
-          </ul>
-          <ul class="header-nav ms-3">
-            <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com"></div></a>
-              <div class="dropdown-menu dropdown-menu-end pt-0">
-                <div class="dropdown-header bg-light py-2">
-                  <div class="fw-semibold">Account</div>
-                </div><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-body">
+      <header class="bg-white border-bottom sticky-top mb-4 dark:bg-body-tertiary">
+        <div class="navbar navbar-expand" style="min-height: 4rem">
+          <div class="container-fluid">
+            <button class="navbar-toggler border-0 d-block me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+              <svg class="icon icon-lg">
+                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-menu"></use>
+              </svg>
+            </button><a class="navbar-brand d-md-none" href="#">
+              <svg width="118" height="46" alt="CoreUI Logo">
+                <use xlink:href="assets/brand/coreui.svg#full"></use>
+              </svg></a>
+            <ul class="navbar-nav d-none d-lg-flex">
+              <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+            </ul>
+            <ul class="navbar-nav d-none d-md-flex ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#">
+                  <svg class="icon icon-lg">
                     <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
-                  </svg> Updates<span class="badge badge-sm bg-info ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
+                  </svg></a></li>
+              <li class="nav-item"><a class="nav-link" href="#">
+                  <svg class="icon icon-lg">
+                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich"></use>
+                  </svg></a></li>
+              <li class="nav-item"><a class="nav-link" href="#">
+                  <svg class="icon icon-lg">
                     <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open"></use>
-                  </svg> Messages<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-task"></use>
-                  </svg> Tasks<span class="badge badge-sm bg-danger ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-comment-square"></use>
-                  </svg> Comments<span class="badge badge-sm bg-warning ms-2">42</span></a>
-                <div class="dropdown-header bg-light py-2">
-                  <div class="fw-semibold">Settings</div>
-                </div><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
-                  </svg> Profile</a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-settings"></use>
-                  </svg> Settings</a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-credit-card"></use>
-                  </svg> Payments<span class="badge badge-sm bg-secondary ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-file"></use>
-                  </svg> Projects<span class="badge badge-sm bg-primary ms-2">42</span></a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
-                  </svg> Lock Account</a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout"></use>
-                  </svg> Logout</a>
-              </div>
-            </li>
-          </ul>
+                  </svg></a></li>
+            </ul>
+            <ul class="navbar-nav ms-3">
+              <li class="nav-item py-2 py-lg-1">
+                <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
+              </li>
+              <li class="nav-item dropdown">
+                <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown" data-coreui-display="static">
+                  <svg class="icon icon-lg theme-icon-active">
+                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast"></use>
+                  </svg>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme" style="--cui-dropdown-min-width: 8rem;">
+                  <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light">
+                      <svg class="icon icon-lg me-3">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-sun"></use>
+                      </svg>Light
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark">
+                      <svg class="icon icon-lg me-3">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-moon"></use>
+                      </svg>Dark
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto">
+                      <svg class="icon icon-lg me-3">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast"></use>
+                      </svg>Auto
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown" data-coreui-display="static">
+                  <svg class="icon icon-lg direction-active">
+                    <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-text-direction-ltr"></use>
+                  </svg>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme" style="--cui-dropdown-min-width: 8rem;">
+                  <li>
+                    <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-direction-value="ltr">
+                      <svg class="icon icon-lg me-3">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-text-direction-ltr"></use>
+                      </svg>Left to Right
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-direction-value="rtl">
+                      <svg class="icon icon-lg me-3">
+                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-text-direction-rtl"></use>
+                      </svg>Right to Left
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item py-2 py-lg-1">
+                <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com"></div></a>
+                <div class="dropdown-menu dropdown-menu-end pt-0">
+                  <div class="dropdown-header bg-light rounded-top py-2 dark:bg-body-tertiary">
+                    <div class="fw-semibold">Account</div>
+                  </div><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
+                    </svg> Updates<span class="badge bg-info ms-2">42</span></a><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open"></use>
+                    </svg> Messages<span class="badge bg-success ms-2">42</span></a><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-task"></use>
+                    </svg> Tasks<span class="badge bg-danger ms-2">42</span></a><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-comment-square"></use>
+                    </svg> Comments<span class="badge bg-warning ms-2">42</span></a>
+                  <div class="dropdown-header bg-light py-2 dark:bg-body-tertiary">
+                    <div class="fw-semibold">Settings</div>
+                  </div><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
+                    </svg> Profile</a><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-settings"></use>
+                    </svg> Settings</a><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-credit-card"></use>
+                    </svg> Payments<span class="badge bg-secondary ms-2">42</span></a><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-file"></use>
+                    </svg> Projects<span class="badge bg-primary ms-2">42</span></a>
+                  <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
+                    </svg> Lock Account</a><a class="dropdown-item" href="#">
+                    <svg class="icon me-2">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout"></use>
+                    </svg> Logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="header-divider"></div>
-        <div class="container-fluid">
+        <div class="border-top container-fluid">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb my-0 ms-2">
+            <ol class="breadcrumb">
               <li class="breadcrumb-item">
                 <!-- if breadcrumb is single--><span>Home</span>
               </li>
@@ -284,7 +345,7 @@
       <div class="body flex-grow-1 px-3">
         <div class="container-lg">
           <div class="row">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-xl-3">
               <div class="card mb-4 text-white bg-primary">
                 <div class="card-body pb-0 d-flex justify-content-between align-items-start">
                   <div>
@@ -309,7 +370,7 @@
               </div>
             </div>
             <!-- /.col-->
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-xl-3">
               <div class="card mb-4 text-white bg-info">
                 <div class="card-body pb-0 d-flex justify-content-between align-items-start">
                   <div>
@@ -334,7 +395,7 @@
               </div>
             </div>
             <!-- /.col-->
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-xl-3">
               <div class="card mb-4 text-white bg-warning">
                 <div class="card-body pb-0 d-flex justify-content-between align-items-start">
                   <div>
@@ -359,7 +420,7 @@
               </div>
             </div>
             <!-- /.col-->
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-xl-3">
               <div class="card mb-4 text-white bg-danger">
                 <div class="card-body pb-0 d-flex justify-content-between align-items-start">
                   <div>
@@ -391,7 +452,7 @@
               <div class="d-flex justify-content-between">
                 <div>
                   <h4 class="card-title mb-0">Traffic</h4>
-                  <div class="small text-medium-emphasis">January - July 2022</div>
+                  <div class="small text-body text-opacity-75">January - July 2022</div>
                 </div>
                 <div class="btn-toolbar d-none d-md-block" role="toolbar" aria-label="Toolbar with buttons">
                   <div class="btn-group btn-group-toggle mx-3" data-coreui-toggle="buttons">
@@ -416,38 +477,38 @@
             <div class="card-footer">
               <div class="row row-cols-1 row-cols-md-5 text-center">
                 <div class="col mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">Visits</div>
+                  <div class="text-body text-opacity-75">Visits</div>
                   <div class="fw-semibold">29.703 Users (40%)</div>
-                  <div class="progress progress-thin mt-2">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress mt-2" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                    <div class="progress-bar bg-success" style="width: 40%"></div>
                   </div>
                 </div>
                 <div class="col mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">Unique</div>
+                  <div class="text-body text-opacity-75">Unique</div>
                   <div class="fw-semibold">24.093 Users (20%)</div>
-                  <div class="progress progress-thin mt-2">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress mt-2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                    <div class="progress-bar bg-info" style="width: 20%"></div>
                   </div>
                 </div>
                 <div class="col mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">Pageviews</div>
+                  <div class="text-body text-opacity-75">Pageviews</div>
                   <div class="fw-semibold">78.706 Views (60%)</div>
-                  <div class="progress progress-thin mt-2">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress mt-2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                    <div class="progress-bar bg-warning" style="width: 60%"></div>
                   </div>
                 </div>
                 <div class="col mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">New Users</div>
+                  <div class="text-body text-opacity-75">New Users</div>
                   <div class="fw-semibold">22.123 Users (80%)</div>
-                  <div class="progress progress-thin mt-2">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress mt-2" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                    <div class="progress-bar bg-danger" style="width: 80%"></div>
                   </div>
                 </div>
                 <div class="col mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">Bounce Rate</div>
+                  <div class="text-body text-opacity-75">Bounce Rate</div>
                   <div class="fw-semibold">40.15%</div>
-                  <div class="progress progress-thin mt-2">
-                    <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress mt-2" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                    <div class="progress-bar bg-primary" style="width: 40%"></div>
                   </div>
                 </div>
               </div>
@@ -468,12 +529,12 @@
                 <div class="card-body row text-center">
                   <div class="col">
                     <div class="fs-5 fw-semibold">89k</div>
-                    <div class="text-uppercase text-medium-emphasis small">friends</div>
+                    <div class="text-uppercase text-body text-opacity-75 small">friends</div>
                   </div>
-                  <div class="vr"></div>
+                  <div class="vr p-0"></div>
                   <div class="col">
                     <div class="fs-5 fw-semibold">459</div>
-                    <div class="text-uppercase text-medium-emphasis small">feeds</div>
+                    <div class="text-uppercase text-body text-opacity-75 small">feeds</div>
                   </div>
                 </div>
               </div>
@@ -492,12 +553,12 @@
                 <div class="card-body row text-center">
                   <div class="col">
                     <div class="fs-5 fw-semibold">973k</div>
-                    <div class="text-uppercase text-medium-emphasis small">followers</div>
+                    <div class="text-uppercase text-body text-opacity-75 small">followers</div>
                   </div>
-                  <div class="vr"></div>
+                  <div class="vr p-0"></div>
                   <div class="col">
                     <div class="fs-5 fw-semibold">1.792</div>
-                    <div class="text-uppercase text-medium-emphasis small">tweets</div>
+                    <div class="text-uppercase text-body text-opacity-75 small">tweets</div>
                   </div>
                 </div>
               </div>
@@ -516,12 +577,12 @@
                 <div class="card-body row text-center">
                   <div class="col">
                     <div class="fs-5 fw-semibold">500+</div>
-                    <div class="text-uppercase text-medium-emphasis small">contacts</div>
+                    <div class="text-uppercase text-body text-opacity-75 small">contacts</div>
                   </div>
-                  <div class="vr"></div>
+                  <div class="vr p-0"></div>
                   <div class="col">
                     <div class="fs-5 fw-semibold">292</div>
-                    <div class="text-uppercase text-medium-emphasis small">feeds</div>
+                    <div class="text-uppercase text-body text-opacity-75 small">feeds</div>
                   </div>
                 </div>
               </div>
@@ -535,16 +596,17 @@
                 <div class="card-header">Traffic &amp; Sales</div>
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
+                      <hr class="d-lg-none">
                       <div class="row">
                         <div class="col-6">
-                          <div class="border-start border-start-4 border-start-info px-3 mb-3"><small class="text-medium-emphasis">New Clients</small>
+                          <div class="border-start border-start-4 border-start-info px-3 mb-3"><small class="text-body text-opacity-75">New Clients</small>
                             <div class="fs-5 fw-semibold">9.123</div>
                           </div>
                         </div>
                         <!-- /.col-->
                         <div class="col-6">
-                          <div class="border-start border-start-4 border-start-danger px-3 mb-3"><small class="text-medium-emphasis">Recuring Clients</small>
+                          <div class="border-start border-start-4 border-start-danger px-3 mb-3"><small class="text-body text-opacity-75">Recuring Clients</small>
                             <div class="fs-5 fw-semibold">22.643</div>
                           </div>
                         </div>
@@ -552,95 +614,96 @@
                       </div>
                       <!-- /.row-->
                       <hr class="mt-0">
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Monday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 34%" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="w-25 text-body text-opacity-75 small text-truncate">Monday</div>
+                        <div class="w-75">
+                          <div class="progress" role="progressbar" aria-valuenow="34%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px; margin-bottom: 2px">
+                            <div class="progress-bar bg-info" style="width: 34%"></div>
                           </div>
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Tuesday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 94%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress" role="progressbar" aria-valuenow="78%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-danger" style="width: 78%"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Wednesday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="w-25 text-body text-opacity-75 small text-truncate">Tuesday</div>
+                        <div class="w-75">
+                          <div class="progress" role="progressbar" aria-valuenow="56%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px; margin-bottom: 2px">
+                            <div class="progress-bar bg-info" style="width: 56%"></div>
                           </div>
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Thursday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 91%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress" role="progressbar" aria-valuenow="94%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-danger" style="width: 94%"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Friday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="w-25 text-body text-opacity-75 small text-truncate">Wednesday</div>
+                        <div class="w-75">
+                          <div class="progress" role="progressbar" aria-valuenow="12%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px; margin-bottom: 2px">
+                            <div class="progress-bar bg-info" style="width: 12%"></div>
                           </div>
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Saturday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 53%" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress" role="progressbar" aria-valuenow="67%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-danger" style="width: 67%"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Sunday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 9%" aria-valuenow="9" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="w-25 text-body text-opacity-75 small text-truncate">Thursday</div>
+                        <div class="w-75">
+                          <div class="progress" role="progressbar" aria-valuenow="43%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px; margin-bottom: 2px">
+                            <div class="progress-bar bg-info" style="width: 43%"></div>
                           </div>
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress" role="progressbar" aria-valuenow="91%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-danger" style="width: 91%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="w-25 text-body text-opacity-75 small text-truncate">Friday</div>
+                        <div class="w-75">
+                          <div class="progress" role="progressbar" aria-valuenow="22%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px; margin-bottom: 2px">
+                            <div class="progress-bar bg-info" style="width: 22%"></div>
+                          </div>
+                          <div class="progress" role="progressbar" aria-valuenow="73%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-danger" style="width: 73%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="w-25 text-body text-opacity-75 small text-truncate">Saturday</div>
+                        <div class="w-75">
+                          <div class="progress" role="progressbar" aria-valuenow="53%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px; margin-bottom: 2px">
+                            <div class="progress-bar bg-info" style="width: 53%"></div>
+                          </div>
+                          <div class="progress" role="progressbar" aria-valuenow="82%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-danger" style="width: 82%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="w-25 text-body text-opacity-75 small text-truncate">Sunday</div>
+                        <div class="w-75">
+                          <div class="progress" role="progressbar" aria-valuenow="9%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px; margin-bottom: 2px">
+                            <div class="progress-bar bg-info" style="width: 9%"></div>
+                          </div>
+                          <div class="progress" role="progressbar" aria-valuenow="69%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-danger" style="width: 69%"></div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <!-- /.col-->
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
+                      <hr class="d-lg-none">
                       <div class="row">
                         <div class="col-6">
-                          <div class="border-start border-start-4 border-start-warning px-3 mb-3"><small class="text-medium-emphasis">Pageviews</small>
+                          <div class="border-start border-start-4 border-start-warning px-3 mb-3"><small class="text-body text-opacity-75">Pageviews</small>
                             <div class="fs-5 fw-semibold">78.623</div>
                           </div>
                         </div>
                         <!-- /.col-->
                         <div class="col-6">
-                          <div class="border-start border-start-4 border-start-success px-3 mb-3"><small class="text-medium-emphasis">Organic</small>
+                          <div class="border-start border-start-4 border-start-success px-3 mb-3"><small class="text-body text-opacity-75">Organic</small>
                             <div class="fs-5 fw-semibold">49.123</div>
                           </div>
                         </div>
@@ -648,91 +711,91 @@
                       </div>
                       <!-- /.row-->
                       <hr class="mt-0">
-                      <div class="progress-group">
-                        <div class="progress-group-header">
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-1">
                           <svg class="icon icon-lg me-2">
                             <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
                           </svg>
                           <div>Male</div>
                           <div class="ms-auto fw-semibold">43%</div>
                         </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div>
+                          <div class="progress" role="progressbar" aria-valuenow="43%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-warning" style="width: 43%"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="progress-group mb-5">
-                        <div class="progress-group-header">
+                      <div style="margin-bottom: 1.9rem">
+                        <div class="d-flex align-items-center mb-1">
                           <svg class="icon icon-lg me-2">
                             <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user-female"></use>
                           </svg>
                           <div>Female</div>
                           <div class="ms-auto fw-semibold">37%</div>
                         </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div>
+                          <div class="progress" role="progressbar" aria-valuenow="43%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-warning" style="width: 43%"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="progress-group">
-                        <div class="progress-group-header">
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-1">
                           <svg class="icon icon-lg me-2">
                             <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-google"></use>
                           </svg>
                           <div>Organic Search</div>
                           <div class="ms-auto fw-semibold me-2">191.235</div>
-                          <div class="text-medium-emphasis small">(56%)</div>
+                          <div class="text-body text-opacity-75 small">(56%)</div>
                         </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div>
+                          <div class="progress" role="progressbar" aria-valuenow="56%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-success" style="width: 56%"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="progress-group">
-                        <div class="progress-group-header">
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-1">
                           <svg class="icon icon-lg me-2">
                             <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-facebook-f"></use>
                           </svg>
                           <div>Facebook</div>
                           <div class="ms-auto fw-semibold me-2">51.223</div>
-                          <div class="text-medium-emphasis small">(15%)</div>
+                          <div class="text-body text-opacity-75 small">(15%)</div>
                         </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div>
+                          <div class="progress" role="progressbar" aria-valuenow="15%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-success" style="width: 15%"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="progress-group">
-                        <div class="progress-group-header">
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-1">
                           <svg class="icon icon-lg me-2">
                             <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-twitter"></use>
                           </svg>
                           <div>Twitter</div>
                           <div class="ms-auto fw-semibold me-2">37.564</div>
-                          <div class="text-medium-emphasis small">(11%)</div>
+                          <div class="text-body text-opacity-75 small">(11%)</div>
                         </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 11%" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div>
+                          <div class="progress" role="progressbar" aria-valuenow="11%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-success" style="width: 11%"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="progress-group">
-                        <div class="progress-group-header">
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-1">
                           <svg class="icon icon-lg me-2">
                             <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-linkedin"></use>
                           </svg>
                           <div>LinkedIn</div>
                           <div class="ms-auto fw-semibold me-2">27.319</div>
-                          <div class="text-medium-emphasis small">(8%)</div>
+                          <div class="text-body text-opacity-75 small">(8%)</div>
                         </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-thin">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div>
+                          <div class="progress" role="progressbar" aria-valuenow="8%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                            <div class="progress-bar bg-success" style="width: 8%"></div>
                           </div>
                         </div>
                       </div>
@@ -742,7 +805,7 @@
                   <!-- /.row--><br>
                   <div class="table-responsive">
                     <table class="table border mb-0">
-                      <thead class="table-light fw-semibold">
+                      <thead class="table-light fw-semibold dark:bg-body-tertiary">
                         <tr class="align-middle">
                           <th class="text-center">
                             <svg class="icon">
@@ -764,7 +827,7 @@
                           </td>
                           <td>
                             <div>Yiorgos Avraamu</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2020</div>
+                            <div class="small text-body text-opacity-75 text-nowrap">New | Registered: Jan 1, 2020</div>
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
@@ -772,14 +835,12 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">50%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2020 - Jul 10, 2020</small></div>
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                              <div class="fw-semibold">50%</div>
+                              <div class="text-body text-opacity-75 small text-nowrap ms-2">Jun 11, 2020 - Jul 10, 2020</div>
                             </div>
-                            <div class="progress progress-thin">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress" role="progressbar" aria-valuenow="50%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                              <div class="progress-bar bg-success" style="width: 50%"></div>
                             </div>
                           </td>
                           <td class="text-center">
@@ -788,8 +849,8 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">10 sec ago</div>
+                            <div class="small text-body text-opacity-75">Last login</div>
+                            <div class="fw-semibold text-nowrap">10 sec ago</div>
                           </td>
                           <td>
                             <div class="dropdown">
@@ -808,7 +869,7 @@
                           </td>
                           <td>
                             <div>Avram Tarasios</div>
-                            <div class="small text-medium-emphasis"><span>Recurring</span> | Registered: Jan 1, 2020</div>
+                            <div class="small text-body text-opacity-75 text-nowrap">Recurring | Registered: Jan 1, 2020</div>
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
@@ -816,14 +877,12 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">10%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2020 - Jul 10, 2020</small></div>
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                              <div class="fw-semibold">10%</div>
+                              <div class="text-body text-opacity-75 small text-nowrap ms-2">Jun 11, 2020 - Jul 10, 2020</div>
                             </div>
-                            <div class="progress progress-thin">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress" role="progressbar" aria-valuenow="10%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                              <div class="progress-bar bg-info" style="width: 10%"></div>
                             </div>
                           </td>
                           <td class="text-center">
@@ -832,8 +891,8 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">5 minutes ago</div>
+                            <div class="small text-body text-opacity-75">Last login</div>
+                            <div class="fw-semibold text-nowrap">5 minutes ago</div>
                           </td>
                           <td>
                             <div class="dropdown">
@@ -852,7 +911,7 @@
                           </td>
                           <td>
                             <div>Quintin Ed</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2020</div>
+                            <div class="small text-body text-opacity-75 text-nowrap">New | Registered: Jan 1, 2020</div>
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
@@ -860,14 +919,12 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">74%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2020 - Jul 10, 2020</small></div>
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                              <div class="fw-semibold">74%</div>
+                              <div class="text-body text-opacity-75 small text-nowrap ms-2">Jun 11, 2020 - Jul 10, 2020</div>
                             </div>
-                            <div class="progress progress-thin">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress" role="progressbar" aria-valuenow="74%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                              <div class="progress-bar bg-warning" style="width: 74%"></div>
                             </div>
                           </td>
                           <td class="text-center">
@@ -876,8 +933,8 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">1 hour ago</div>
+                            <div class="small text-body text-opacity-75">Last login</div>
+                            <div class="fw-semibold text-nowrap">1 hour ago</div>
                           </td>
                           <td>
                             <div class="dropdown">
@@ -896,7 +953,7 @@
                           </td>
                           <td>
                             <div>Enéas Kwadwo</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2020</div>
+                            <div class="small text-body text-opacity-75 text-nowrap">New | Registered: Jan 1, 2020</div>
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
@@ -904,14 +961,12 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">98%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2020 - Jul 10, 2020</small></div>
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                              <div class="fw-semibold">98%</div>
+                              <div class="text-body text-opacity-75 small text-nowrap ms-2">Jun 11, 2020 - Jul 10, 2020</div>
                             </div>
-                            <div class="progress progress-thin">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress" role="progressbar" aria-valuenow="98%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                              <div class="progress-bar bg-danger" style="width: 98%"></div>
                             </div>
                           </td>
                           <td class="text-center">
@@ -920,8 +975,8 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">Last month</div>
+                            <div class="small text-body text-opacity-75">Last login</div>
+                            <div class="fw-semibold text-nowrap">Last month</div>
                           </td>
                           <td>
                             <div class="dropdown">
@@ -940,7 +995,7 @@
                           </td>
                           <td>
                             <div>Agapetus Tadeáš</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2020</div>
+                            <div class="small text-body text-opacity-75 text-nowrap">New | Registered: Jan 1, 2020</div>
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
@@ -948,14 +1003,12 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">22%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2020 - Jul 10, 2020</small></div>
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                              <div class="fw-semibold">22%</div>
+                              <div class="text-body text-opacity-75 small text-nowrap ms-2">Jun 11, 2020 - Jul 10, 2020</div>
                             </div>
-                            <div class="progress progress-thin">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress" role="progressbar" aria-valuenow="22%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                              <div class="progress-bar bg-info" style="width: 22%"></div>
                             </div>
                           </td>
                           <td class="text-center">
@@ -964,8 +1017,8 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">Last week</div>
+                            <div class="small text-body text-opacity-75">Last login</div>
+                            <div class="fw-semibold text-nowrap">Last week</div>
                           </td>
                           <td>
                             <div class="dropdown dropup">
@@ -984,7 +1037,7 @@
                           </td>
                           <td>
                             <div>Friderik Dávid</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2020</div>
+                            <div class="small text-body text-opacity-75 text-nowrap">New | Registered: Jan 1, 2020</div>
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
@@ -992,14 +1045,12 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">43%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2020 - Jul 10, 2020</small></div>
+                            <div class="d-flex align-items-end justify-content-between mb-1">
+                              <div class="fw-semibold">43%</div>
+                              <div class="text-body text-opacity-75 small text-nowrap ms-2">Jun 11, 2020 - Jul 10, 2020</div>
                             </div>
-                            <div class="progress progress-thin">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress" role="progressbar" aria-valuenow="43%" aria-valuemin="0" aria-valuemax="100" style="--cui-progress-height: 4px;">
+                              <div class="progress-bar bg-success" style="width: 43%"></div>
                             </div>
                           </td>
                           <td class="text-center">
@@ -1008,8 +1059,8 @@
                             </svg>
                           </td>
                           <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">Yesterday</div>
+                            <div class="small text-body text-opacity-75">Last login</div>
+                            <div class="fw-semibold text-nowrap">Yesterday</div>
                           </td>
                           <td>
                             <div class="dropdown dropup">
@@ -1033,18 +1084,19 @@
           <!-- /.row-->
         </div>
       </div>
-      <footer class="footer">
-        <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> &copy; 2022 creativeLabs.</div>
-        <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">CoreUI UI Components</a></div>
+      <footer class="footer dark:bg-body-tertiary">
+        <div><a href="https://coreui.io/product/free-bootstrap-admin-template/">CoreUI Bootstrap Admin Template</a> &copy; 2023 creativeLabs.</div>
+        <div>Powered by&nbsp;<a href="https://coreui.io/docs/">CoreUI UI Components</a></div>
       </footer>
     </div>
     <!-- CoreUI and necessary plugins-->
     <script src="node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
     <script src="node_modules/simplebar/dist/simplebar.min.js"></script>
     <!-- Plugins and scripts required by this view-->
-    <script src="node_modules/chart.js/dist/chart.min.js"></script>
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
     <script src="node_modules/@coreui/chartjs/dist/js/coreui-chartjs.js"></script>
-    <script src="node_modules/@coreui/utils/dist/coreui-utils.js"></script>
+    <script src="node_modules/chartjs-plugin-annotation/dist/chartjs-plugin-annotation.min.js"></script>
+    <script src="node_modules/@coreui/utils/dist/umd/index.js"></script>
     <script src="js/main.js"></script>
     <script> 
     </script>

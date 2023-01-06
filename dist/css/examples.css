@@ -3,12 +3,10 @@
   margin-top: 1.5rem;
 }
 .example .tab-content {
-  background-color: var(--cui-tertiary-bg) !important;
+  margin-top: -0.125rem !important;
+  background-color: rgba(var(--cui-tertiary-bg-rgb), 0.5) !important;
+  border-top: 0.125rem solid var(--cui-border-color) !important;
 }
-.dark-theme .example .tab-content {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
 .example + p {
   margin-top: 1.5rem;
 }
