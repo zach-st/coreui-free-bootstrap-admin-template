@@ -1,0 +1,209 @@
+extends ../_layout/default.pug
+
+
+
+block scripts
+  if !starter
+    // Plugins and scripts required by this view
+    //script(src='node_modules/chart.js/dist/chart.min.js')
+    //script(src='node_modules/@coreui/chartjs/dist/js/coreui-chartjs.js')
+    script(src='node_modules/@coreui/utils/dist/coreui-utils.js')
+    script(src='js/main.js')
+
+
+block view
+  .row.justify-content-md-center
+    .col-sm-6.col-lg-3
+      .card.mb-4
+        .card-header.font-weight-bold.text-center
+          | Step 1 - PRE Stage 0
+        .card-body.font-weight-bold.text-center
+          svg.icon.icon-xxl.text-success
+            use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-check")
+        .card-footer.text-center
+          button.btn.btn-sm.btn-success.mt-2.me-1
+            | Run
+          button.btn.btn-sm.btn-info.mt-2.me-1
+            | Results
+          button.btn.btn-sm.btn-danger.mt-2.me-1
+            | Kill
+          
+    // /.col
+    .col-sm-6.col-lg-3
+      .card.mb-4
+        .card-header.font-weight-bold.text-center
+          | Step 2 - PRE Stage 1
+        .card-body.font-weight-bold.text-center
+          svg.icon.icon-xxl.text-danger
+            use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-x")
+        .card-footer.text-center
+          button.btn.btn-sm.btn-success.mt-2.me-1
+            | Run
+          button.btn.btn-sm.btn-info.mt-2.me-1
+            | Results
+          button.btn.btn-sm.btn-danger.mt-2.me-1
+            | Kill
+    // /.col
+    .col-sm-6.col-lg-3
+      .card.mb-4
+        .card-header.font-weight-bold.text-center
+          | Step 3 - Deploy Container Platform
+        .card-body.font-weight-bold.text-center
+          svg.icon.icon-xxl
+            use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-minus")
+        .card-footer.text-center
+          button.btn.btn-sm.btn-success.mt-2.me-1
+            | Run
+          button.btn.btn-sm.btn-info.mt-2.me-1
+            | Results
+          button.btn.btn-sm.btn-danger.mt-2.me-1
+            | Kill
+    // /.col
+    .col-sm-6.col-lg-3
+      .card.mb-4
+        .card-header.font-weight-bold.text-center
+          | Step 4 - Some other Thing
+        .card-body.font-weight-bold.text-center
+          span.spinner-border
+        .card-footer.text-center
+          button.btn.btn-sm.btn-success.mt-2.me-1
+            | Run
+          button.btn.btn-sm.btn-info.mt-2.me-1
+            | Results
+          button.btn.btn-sm.btn-danger.mt-2.me-1
+            | Kill
+    // /.col
+  // /.row
+  .row.justify-content-md-center
+    .col-4
+      .col-12
+        .card.mb-4
+          .card-header.font-weight-bold.text-center
+            | Tasks
+          .card-body.text-center
+            btn.btn.btn-secondary.me-2.mb-2 
+              | Maintenance Tasks
+            btn.btn.btn-secondary.me-2.mb-2 
+              | Deploy Tools
+            .row 
+              .row.mt-2.mb-2
+                .col-6.mt-2
+                  | Add Nodes
+                  br
+                  button.btn.btn-sm.btn-success 
+                    | Run
+                  button.btn.btn-sm.btn-info 
+                    | Results
+                  button.btn.btn-sm.btn-danger 
+                    | Kill
+                .col-6.mt-2
+                  | Discover Nodes
+                  br
+                  button.btn.btn-sm.btn-success 
+                    | Run
+                  button.btn.btn-sm.btn-info 
+                    | Results
+                  button.btn.btn-sm.btn-danger 
+                    | Kill
+                .col-6.mt-2
+                  | Update Repos
+                  br
+                  button.btn.btn-sm.btn-success 
+                    | Run
+                  button.btn.btn-sm.btn-info 
+                    | Results
+                  button.btn.btn-sm.btn-danger 
+                    | Kill
+          
+      // /.col-12
+    .col-8 
+      .col-12 
+        .card.mb-4
+          .card-header.font-weight-bold.text-center
+            | Playbook Output
+          .card-body
+            .row.form-group
+              .col 
+                select.form-select(aria-label='Default select example')
+                  option(selected) Select a run
+                  option(value='1') One
+                  option(value='2') Two
+                  option(value='3') Three
+              .form-check.form-switch.col-6 
+                input.form-check-input#flexSwitchCheckDefault(type='checkbox', checked)
+                label.form-check-label(for='flexSwitchCheckDefault') AutoScroll
+              .font-monospace.mb-2.mt-2
+                span.
+                | TASK [vmware/vcenter/vsan : Enable vSAN and claim storage automatically] ****************************************************
+                br
+                span.text-warning
+                  | changed: [esxi-0.XXX.acme -> localhost]
+                br
+                | 
+                br
+                span.font-weight-bold
+                  | TASK [vmware/vcenter/vsan : Template datastore deployment script] ***********************************************************
+                br
+                span.text-warning
+                  | changed: [esxi-0.XXX.acme -> localhost]
+                br
+                span.text-warning
+                  | changed: [esxi-1.XXX.acme -> localhost]
+                br
+                span.text-warning
+                  | changed: [esxi-2.XXX.acme -> localhost]
+                br
+                | 
+                br
+                span.font-weight-bold
+                  | TASK [vmware/vcenter/vsan : Run vSAN deployment script] *********************************************************************
+                br
+                span.text-success
+                  | ok: [esxi-1.XXX.acme -> localhost]
+                br
+                span.text-success
+                  | ok: [esxi-0.XXX.acme -> localhost]
+                br
+                span.text-success
+                  | ok: [esxi-2.XXX.acme -> localhost]
+                br
+                | 
+                br
+                span.font-weight-bold
+                  | TASK [vmware/vcenter/vsan : Delete vSan deployment scripts] *****************************************************************
+                br
+                span.text-info
+                  | skipped: [esxi-0.XXX.acme -> localhost]
+                br
+                span.text-info
+                  | skipped: [esxi-1.XXX.acme -> localhost]
+                br
+                span.text-info
+                  | skipped: [esxi-2.XXX.acme -> localhost]
+                br
+                | 
+                br
+                span.font-weight-bold
+                  | TASK [vmware/vcenter/vsan : Rename Default vsanDatastore name] **************************************************************
+                br
+                span.text-warning
+                  | changed: [esxi-0.XXX.acme -> localhost]
+                br
+                | 
+                br
+                | PLAY RECAP ******************************************************************************************************************
+                br
+                | esxi-0.XXX.acme : ok=35 changed=18 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0
+                br
+                | esxi-1.XXX.acme : ok=33 changed=16 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0
+                br
+                | esxi-2.XXX.acme : ok=33 changed=17 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0
+                br
+                | host.containers.internal : ok=147 changed=23 unreachable=0 failed=0 skipped=23 rescued=0 ignored=0
+                br
+                | provisioner.XXX.acme : ok=12 changed=9 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0 
+
+    // /.col-4
+  
+
+  // /.row

@@ -6,12 +6,18 @@
     svg.sidebar-brand-narrow(width="46" height="46" alt="CoreUI Logo")
       use(xlink:href="assets/brand/coreui.svg#signet")
   ul.sidebar-nav(data-coreui="navigation" data-simplebar)
+    li.nav-title 
+      | Activities
+    li.nav-item
+      a.nav-link(href='st.html')
+        svg.nav-icon
+          use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-ansible")
+        |  ST
     li.nav-item
       a.nav-link(href='index.html')
         svg.nav-icon
           use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-speedometer")
         |  Dashboard
-        span.badge.badge-sm.bg-info.ms-auto NEW
     li.nav-title
       | Theme
     li.nav-item

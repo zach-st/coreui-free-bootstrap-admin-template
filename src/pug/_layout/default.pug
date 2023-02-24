@@ -12,12 +12,12 @@ html(lang='en')
     include ../_partials/head.pug
     block canonical
     block styles
-  body
+  body(class='dark-theme')
     include ../_partials/sidebar.pug
-    .wrapper.d-flex.flex-column.min-vh-100.bg-light
+    .wrapper.d-flex.flex-column.min-vh-100
       include ../_partials/header.pug
       .body.flex-grow-1.px-3
-        .container-lg
+        .container-fluid
           block view
       include ../_partials/footer.pug
     include ../_partials/scripts.pug
